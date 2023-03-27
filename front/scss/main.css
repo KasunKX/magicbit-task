@@ -1,0 +1,235 @@
+@import url("https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;500;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Mukta", sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+}
+body .app {
+  display: grid;
+  place-items: center;
+  background-color: rgb(194, 188, 255);
+  width: 100%;
+  height: 100%;
+}
+body .app .container {
+  width: 75vw;
+  height: 75vh;
+  background-color: rgb(232, 230, 255);
+  border-radius: 20px;
+  padding: 2%;
+}
+body .app .container .notification {
+  position: absolute;
+  width: 24%;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  left: 38%;
+  top: 5%;
+}
+body .app .container .dataContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body .app .container .dataContainer .left, body .app .container .dataContainer .right {
+  width: 50%;
+  height: 100%;
+}
+body .app .container .dataContainer .left {
+  width: 40%;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: space-between;
+}
+body .app .container .dataContainer .left .top, body .app .container .dataContainer .left .bottom {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 50%;
+}
+body .app .container .dataContainer .left .top {
+  width: 100%;
+  display: flex;
+  height: 30%;
+  justify-content: space-around;
+  position: relative;
+}
+body .app .container .dataContainer .left .top .topLeft, body .app .container .dataContainer .left .top .topRight {
+  width: 100%;
+  height: 100%;
+}
+body .app .container .dataContainer .left .top .topLeft {
+  display: flex;
+}
+body .app .container .dataContainer .left .top .topLeft h2 {
+  width: 85%;
+  height: 100%;
+  background-color: white;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  box-shadow: 1px 1px 20px 5px rgb(207, 207, 207);
+  font-size: 2vw;
+  animation-name: recieveDataAnimation;
+  animation-duration: 1s;
+  animation-fill-mode: backwards;
+  animation-timing-function: linear;
+  transition: 0.5s;
+}
+body .app .container .dataContainer .left .top .topRight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+body .app .container .dataContainer .left .top .topRight button {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-size: 1.25vw;
+}
+body .app .container .dataContainer .left .center {
+  height: -moz-fit-content;
+  height: fit-content;
+}
+body .app .container .dataContainer .left .center h3 {
+  text-align: center;
+  font-weight: 300;
+  color: rgb(31, 24, 117);
+}
+body .app .container .dataContainer .left .bottom {
+  display: flex;
+  flex-direction: column;
+  height: -moz-fit-content;
+  height: fit-content;
+  align-items: center;
+}
+body .app .container .dataContainer .left .bottom button {
+  padding: 2%;
+  font-size: 1.2vw;
+  cursor: pointer;
+  background-color: #a584ff;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  width: 50%;
+  color: white;
+  transition: 0.2s;
+}
+body .app .container .dataContainer .left .bottom .reset {
+  margin-top: 2%;
+  color: rgb(46, 43, 78);
+  background-color: rgb(215, 211, 255);
+}
+body .app .container .dataContainer .left .bottom button:active {
+  transform: scale(0.94, 0.94);
+}
+body .app .container .dataContainer .right {
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+body .conWindow {
+  background-color: #e3d7ff;
+  border: 1px solid rgb(204, 204, 255);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: fixed;
+  z-index: 10;
+  top: 32.5%;
+  left: 35%;
+  width: 30%;
+  height: 35%;
+}
+body .conWindow .setupText {
+  font-size: 1.5vw;
+  font-weight: 300;
+  text-align: center;
+  position: relative;
+}
+body .conWindow .connection {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+body .conWindow .connection .inp {
+  display: flex;
+  justify-content: space-around;
+}
+body .conWindow .connection .inp h3 {
+  font-weight: 300;
+  font-size: 1.25vw;
+  color: #5c5c5c;
+}
+body .conWindow .connection .field {
+  border: none;
+  width: 60%;
+  box-sizing: border-box;
+  padding-left: 3px;
+  font-weight: 300;
+  font-size: 1.15vw;
+}
+body .conWindow .connection .field:focus {
+  border: none;
+  outline: 1px solid rgb(168, 168, 255);
+}
+body .conWindow .connection button {
+  width: 35%;
+  min-width: 100px;
+  min-height: 30px;
+  position: relative;
+  left: 35%;
+  outline: none;
+  border: none;
+  background-color: rgb(143, 143, 255);
+  color: white;
+  letter-spacing: 1px;
+  font-size: 1.15vw;
+  cursor: pointer;
+  transition: 0.05s;
+}
+body .conWindow .connection button:active {
+  transform: scale(0.96, 0.96);
+  background-color: rgb(107, 107, 255);
+}
+body .conWindow .connectionDetails {
+  background-color: rgb(245, 241, 235);
+  text-align: center;
+  padding: 0%;
+  box-sizing: border-box;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+body .conWindow .connectionDetails h3 {
+  font-size: 1.1vw;
+  font-weight: 300;
+  color: rgb(72, 72, 255);
+}
+
+@keyframes recieveDataAnimation {
+  from {
+    background-color: #d0ccf3;
+    color: gray;
+  }
+  to {
+    background-color: white;
+    color: black;
+  }
+}/*# sourceMappingURL=main.css.map */

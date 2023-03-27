@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;500;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Mukta', sans-serif;
+}
+
+
+body{
+    width: 100%;
+    height: 100vh;
+
+    & .app{
+        display: grid;
+        place-items: center;
+        background-color: rgb(194, 188, 255);
+        width: 100%;
+        height: 100%;
+
+        
+
+        & .container{
+            width: 75vw;
+            height: 75vh;
+            background-color: rgb(232, 230, 255);
+            border-radius: 20px;
+            padding: 2%;
+
+            & .notification{
+                position: absolute;
+                width: 24%;
+                height: 50px;
+                display: grid;
+                place-items: center;
+                left: 38%;
+                top: 5%;
+                
+            }
+
+            & .dataContainer{
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                & .left, .right{
+                    width: 50%;
+                    height: 100%;
+                }
+
+                & .left{
+                    width: 40%;
+                    display: flex;
+                    position: relative;
+                    flex-direction: column;
+                    justify-content: space-between;
+
+                    & .top, .bottom{
+                        display: flex;
+                        justify-content: space-between;
+                        width:100%;
+                        height: 50%;
+                    }
+
+                    & .top{
+                        width: 100%;
+                        display: flex;
+                        height: 30%;
+                        justify-content: space-around;
+                        position: relative;                  
+
+                        & .topLeft, .topRight{
+                            width: 100%;
+                            height: 100%;
+                            
+                        }
+
+                        & .topLeft{
+                            display: flex;
+
+                            & h2{
+                                width: 85%;
+                                height: 100%;
+                                background-color: white;
+                                display: grid;
+                                place-items: center;
+                                border-radius: 10px;
+                                box-shadow: 1px 1px 20px 5px rgb(207, 207, 207);
+                                font-size: 2vw;
+                                animation-name: recieveDataAnimation;
+                                animation-duration: 1s;
+                                animation-fill-mode: backwards;
+                                animation-timing-function: linear;
+                                transition: 0.5s;
+                            }
+                        }
+
+                        & .topRight{
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            height: 100%;
+
+                            
+                            & button{
+                                width: 40px;
+                                height: 40px;
+                                cursor: pointer;
+                                border: none;
+                                outline: none;
+                                
+                                font-size: 1.25vw;
+                                
+                                
+                            }
+                        }
+                    }
+                    
+                    & .center{
+                        height: fit-content;
+
+                        & h3{
+                            text-align: center;
+                            font-weight: 300;
+                            color: rgb(31, 24, 117);;
+                        }
+                    }
+
+                    & .bottom{
+                        display: flex;
+                        flex-direction: column;
+                        height: fit-content;
+                        align-items: center;
+
+                        & button{
+                            padding: 2%;
+                            font-size: 1.2vw;
+                            cursor: pointer;
+                            background-color: #a584ff;
+                            border: none;
+                            outline: none;
+                            border-radius: 10px;
+                            width: 50%;
+                            color: white;
+                            transition: 0.2s;
+                        }
+
+                        & .reset{
+                            margin-top: 2%;
+                            color: rgb(46, 43, 78);;
+                            background-color: rgb(215, 211, 255);
+                        }
+
+                        & button:active{
+                            transform: scale(0.94, 0.94);
+                        }
+                    }
+                }
+
+                & .right{
+                    width: 55%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                }
+
+            }
+        }
+
+        }
+
+    & .conWindow{
+        background-color:#e3d7ff;;
+        border: 1px solid rgb(204, 204, 255);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position:fixed;
+        z-index: 10;
+        top: 32.5%;
+        left: 35%;
+        width: 30%;
+        height: 35%;
+
+        
+
+        & .setupText{
+            font-size: 1.5vw;
+            font-weight: 300;
+            text-align: center;
+            position: relative;
+        }
+
+        & .connection{
+            width: 100%;
+            height: 100%;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        
+
+            & .inp{
+                display: flex;
+                justify-content: space-around;
+
+                & h3{
+                    font-weight: 300;
+                    font-size: 1.25vw;
+                    color: #5c5c5c;;
+                }
+            }
+
+            & .field{
+                border: none;
+                width: 60%;
+                box-sizing: border-box;
+                padding-left: 3px;
+                font-weight: 300;
+                font-size: 1.15vw;
+            }
+
+            &   .field:focus{
+                border: none;
+                outline: 1px solid rgb(168, 168, 255);
+            }
+
+            & button{
+                width: 35%;
+                min-width: 100px;
+                min-height: 30px;
+                position: relative;
+                left: 35%;
+                outline: none;
+                border: none;
+                background-color: rgb(143, 143, 255);
+                color: white;
+                letter-spacing: 1px;
+                font-size: 1.15vw;
+                cursor: pointer;
+                transition: 0.05s;
+            }
+
+            & button:active{
+                transform: scale(0.96,0.96);
+                background-color: rgb(107, 107, 255);
+            }
+            
+        }
+
+        & .connectionDetails{
+            background-color: rgb(245, 241, 235);
+            text-align: center;
+            padding: 0%;
+            box-sizing: border-box;
+            height: fit-content;
+
+            & h3{
+                font-size: 1.1vw;
+                font-weight: 300;
+                color: rgb(72, 72, 255);
+            }
+        }
+        }
+}
+
+@keyframes recieveDataAnimation{
+    from{
+        background-color: #d0ccf3;
+        color: gray;
+    }to{
+        background-color: white;
+        color: black;
+    }
+}
+
